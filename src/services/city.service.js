@@ -4,7 +4,7 @@ const weatherService = require("./weather.service");
 
 const getCities = () => cityModel.find();
 
-const getCity = (id) => {};
+const getCity = (id) => cityModel.findById(id)
 
 const createCity = async (name) => {
   let isNameValid = await checkCityName(name);
@@ -24,7 +24,7 @@ const createCity = async (name) => {
   }
 };
 
-const deleteCity = (id) => {};
+const deleteCity = (id) => cityModel.findByIdAndDelete(id);
 
 const cityService = {
   getCities,
